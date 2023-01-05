@@ -22,14 +22,14 @@ Add-Content -path $logfile "Files Renamed"
 Add-Content -path $logfile "-----------------------------------------"
 
 gci -filter $onlychange | ?{!$_.PsIsContainer} | 
-							%{
-								$newname = $_.BaseName + $extension
+			%{
+				$newname = $_.BaseName + $extension
                                 ren $_ -new $newname -f 
                                 $i++
                                 
                                 Write-Host Old Name:"$_" --> New Name: "$newname" -BackgroundColor DarkMagenta
                                 Write-Output "Old Name:$_ --> New Name: $newname" | Out-File  $logfile -Append ascii
-							}#end of rename loop
+			}#end of rename loop
                                 
 Write-Host $i files renamed $logtime -BackgroundColor Green
 Add-Content -path $logfile -value "`r`n$i files renamed $logtime`r`n"
