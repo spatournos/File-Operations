@@ -1,4 +1,25 @@
-#rename only specific files with same name and replace only last extension and write log file
+# ------------------------------------------------------------------------
+# NAME: massrename.ps1
+# AUTHOR: spatournos
+# DATE: Jan 2023
+#
+# COMMENTS: This script renames given files in a folder by replacing their
+# extension (so it changes file type) or adding extension if they don't have one.
+# ------------------------------------------------------------------------
+
+<#
+.SYNOPSIS
+  Add/Replace file extension in given files in a folder
+.DESCRIPTION
+  Mass change file extension for selected files in a folder and log changes
+.INPUTS
+  
+.OUTPUTS
+  renamed.log
+.EXAMPLE
+  massrename.ps1
+#>
+#rename only specific files with same name and new extension and write log file
 
 $logpath = ".\logs\"
 $logfile = $logpath + "renamed.log"
